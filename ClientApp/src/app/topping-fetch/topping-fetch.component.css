@@ -1,0 +1,16 @@
+mat-card{
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+mat-card-actions{
+    float: right;
+}
+button{
+    float: right;
+    margin: 10px;
+    background-color: lightgray;
+}

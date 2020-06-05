@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Edit {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>Edit milk</p>
+  <mat-form-field>
+    <mat-label>Milk brand name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Milk price</mat-label>
+    <input matInput [(ngModel)]="data.price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Milk expirationDate</mat-label>
+    <input matInput [(ngModel)]="data.expirationDate">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Milk quantity</mat-label>
+    <input matInput [(ngModel)]="data.quantity">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Milk fattiness</mat-label>
+    <input matInput [(ngModel)]="data.fattiness">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Milk rating</mat-label>
+    <input matInput [(ngModel)]="data.rating">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Milk milkType</mat-label>
+    <input matInput [(ngModel)]="data.milkType">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

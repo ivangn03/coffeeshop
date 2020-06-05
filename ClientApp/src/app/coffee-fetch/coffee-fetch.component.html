@@ -1,0 +1,66 @@
+<h1 id="tableLabel">Coffee tab</h1>
+
+<p *ngIf="!coffeeData"><em>Loading...</em></p>
+
+<div class='md-padding' layout="row" layout-wrap *ngIf="coffeeData">
+  <button mat-button (click)="create()" *ngIf="token!=null">
+    <mat-icon>add_to_queue</mat-icon>
+  </button>
+  <mat-card *ngFor="let coffee of coffeeData">
+    <mat-card-header>
+      <mat-card-title>{{coffee.name}}</mat-card-title>
+      <mat-card-subtitle>Rating {{coffee.rating}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="http://image.tmdb.org/t/p/w185/{{film.poster_path}}" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+      <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="coffeeData">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Country</th>
+            <th>Quantity</th>
+            <th>ExpirationDate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ coffee.name }}</td>
+            <td>{{ coffee.price }}</td>
+            <td>{{ coffee.country }}</td>
+            <td>{{ coffee.quantity }}</td>
+            <td>{{ coffee.expirationDate }}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>CoffeeType</th>
+            <th>Sour</th>
+            <th>Strength</th>
+            <th>Saturation</th>
+            <th>Arome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <td>{{ coffee.coffeeType==0?"Arabica":"Robusta" }}</td>
+            <td>{{ coffee.sour }}</td>
+            <td>{{ coffee.strength }}</td>
+            <td>{{ coffee.saturation }}</td>
+            <td>{{ coffee.aroma }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+    <mat-card-actions *ngIf="token!=null">
+      <button mat-button (click)="delete(coffee.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-button (click)="edit(coffee.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

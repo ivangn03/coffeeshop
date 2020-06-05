@@ -1,0 +1,65 @@
+<h1 id="tableLabel">Milk tab</h1>
+
+<p *ngIf="!milkData"><em>Loading...</em></p>
+
+<div class='md-padding' layout="row" layout-wrap *ngIf="milkData">
+  <button mat-button (click)="create()" *ngIf="token!=null">
+    <mat-icon>add_to_queue</mat-icon>
+  </button>
+  <mat-card *ngFor="let milk of milkData">
+    <mat-card-header>
+      <mat-card-title>{{milk.name}}</mat-card-title>
+      <mat-card-subtitle>Rating {{milk.rating}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="http://image.tmdb.org/t/p/w185/{{film.poster_path}}" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+      <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="milkData">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Fattiness</th>
+            <th>Quantity</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ milk.name }}</td>
+            
+            <td>{{ milk.fattiness }}</td>
+            <td>{{ milk.quantity }}</td>
+           
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>MilkType</th>
+            <th>ExpirationDate</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td [ngSwitch]="milk.milkType">
+                <div *ngSwitchCase="0">Cow</div>
+                <div *ngSwitchCase="1">Almond</div>
+                <div *ngSwitchCase="2">Buckwheat</div>
+                <div *ngSwitchDefault>N/A</div>
+              </td> 
+              <td>{{ milk.expirationDate }}</td>
+              <td>{{ milk.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+    <mat-card-actions *ngIf="token!=null">
+      <button mat-button (click)="delete(milk.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-button (click)="edit(milk.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

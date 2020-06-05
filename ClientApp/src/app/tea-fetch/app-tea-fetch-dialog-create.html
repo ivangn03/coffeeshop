@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Create {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>Create tea</p>
+  <mat-form-field>
+    <mat-label>Tea brand name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tea price</mat-label>
+    <input matInput [(ngModel)]="data.price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tea expirationDate</mat-label>
+    <input matInput [(ngModel)]="data.expirationDate">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tea quantity</mat-label>
+    <input matInput [(ngModel)]="data.quantity">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tea country</mat-label>
+    <input matInput [(ngModel)]="data.country">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tea rating</mat-label>
+    <input matInput [(ngModel)]="data.rating">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tea teaType</mat-label>
+    <input matInput [(ngModel)]="data.teaType">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

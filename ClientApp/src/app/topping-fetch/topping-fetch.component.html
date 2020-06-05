@@ -1,0 +1,59 @@
+<h1 id="tableLabel">Topping tab</h1>
+
+<p *ngIf="!toppingData"><em>Loading...</em></p>
+
+<div class='md-padding' layout="row" layout-wrap *ngIf="toppingData">
+  <button mat-button (click)="create()" *ngIf="token!=null">
+    <mat-icon>add_to_queue</mat-icon>
+  </button>
+  <mat-card *ngFor="let topping of toppingData">
+    <mat-card-header>
+      <mat-card-title>{{topping.name}}</mat-card-title>
+      <mat-card-subtitle>Rating {{topping.rating}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="http://image.tmdb.org/t/p/w185/{{film.poster_path}}" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+      <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="toppingData">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+           
+           
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ topping.name }}</td>
+            <td>{{ topping.price }}</td>
+            
+            
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>ExpirationDate</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+            <td>{{ topping.expirationDate }}</td>
+            <td>{{ topping.quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+    <mat-card-actions *ngIf="token!=null">
+      <button mat-button (click)="delete(topping.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-button (click)="edit(topping.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

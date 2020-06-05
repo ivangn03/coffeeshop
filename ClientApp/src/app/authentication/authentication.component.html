@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label for="loginForm">Login</label>
+    <input matInput [(ngModel)]="login" placeholder="Enter email or login">
+</div>
+<div class="form-group">
+    <label for="passwordForm">Password</label>
+    <input matInput [(ngModel)]="password" type="password" placeholder="Password">
+</div>
+<button mat-button (click)="logIn()" class="btn btn-primary">Submit</button>

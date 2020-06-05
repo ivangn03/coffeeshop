@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Create {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>Create coffee</p>
+  <mat-form-field>
+    <mat-label>Coffee brand name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee price</mat-label>
+    <input matInput [(ngModel)]="data.price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee expirationDate</mat-label>
+    <input matInput [(ngModel)]="data.expirationDate">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee quantity</mat-label>
+    <input matInput [(ngModel)]="data.quantity">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee country</mat-label>
+    <input matInput [(ngModel)]="data.country">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee rating</mat-label>
+    <input matInput [(ngModel)]="data.rating">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee coffeeType</mat-label>
+    <input matInput [(ngModel)]="data.coffeeType">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee sour</mat-label>
+    <input matInput [(ngModel)]="data.sour">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee strength</mat-label>
+    <input matInput [(ngModel)]="data.strength">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee saturation</mat-label>
+    <input matInput [(ngModel)]="data.saturation">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coffee aroma</mat-label>
+    <input matInput [(ngModel)]="data.aroma">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
