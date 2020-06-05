@@ -62,4 +62,3 @@ bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
 bin/Debug/netcoreapp3.1/Properties/launchSettings.json
 .vscode/launch.json
 .vscode/tasks.json
-WeatherForecast.cs
